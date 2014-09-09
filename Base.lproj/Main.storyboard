@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.9" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.9" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="h9u-I0-LuJ">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
     </dependencies>
@@ -80,6 +80,13 @@
                             <outletCollection property="gestureRecognizers" destination="Wfj-Wt-8Fw" appends="YES" id="C8V-Zl-v29"/>
                         </connections>
                     </view>
+                    <navigationItem key="navigationItem" id="IxV-nY-vIv">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="HvK-fw-7dT">
+                            <connections>
+                                <segue destination="mlI-IE-GqW" kind="modal" modalTransitionStyle="flipHorizontal" id="ZXR-mU-OAH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="billLabel" destination="Jxf-IF-tFv" id="GSe-Vg-UgH"/>
                         <outlet property="billText" destination="rlA-KZ-6XY" id="x4C-ID-YRe"/>
@@ -97,7 +104,51 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="234" y="273"/>
+            <point key="canvasLocation" x="260" y="193"/>
+        </scene>
+        <!--Setting Controller View Controller-->
+        <scene sceneID="RaD-9k-CZ3">
+            <objects>
+                <viewController id="mlI-IE-GqW" customClass="settingControllerViewController" customModule="tippy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="M6L-ur-HgA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="vcC-49-O6d">
+                                <rect key="frame" x="247" y="40" width="45" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="cancel">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancel:" destination="mlI-IE-GqW" eventType="touchUpInside" id="ews-Rf-uYj"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PJy-4O-SH4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="668" y="193"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="KpN-Kx-6FU">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="h9u-I0-LuJ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Hhc-CQ-7bY">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="TFS-c6-HOd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Txs-lZ-uMK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-169" y="228"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
